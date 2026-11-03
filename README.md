@@ -5,7 +5,9 @@
 - `/architecture/` — типографика, графика территорий, выбор проектов
 
 `npm install`, `npm run dev` (порт 5174), `npm run build`.
-Одна сборка `dist` содержит обе страницы. При статическом размещении требуется SPA fallback на index.html.
+Одна сборка `dist` содержит обе страницы. После Vite скрипт `scripts/build-routes.mjs` создает `dist/editorial/index.html` и `dist/architecture/index.html`, поэтому прямые ссылки и обновление страницы работают на статическом хостинге без SPA fallback. Скрипты, стили и изображения остаются общими.
+
+Render Static Site: Build Command — `npm ci && npm run build`, Publish Directory — `dist` (относительно корня проекта `porfolio`). После обновления исходников выполнить новый deploy. Ссылки: `/editorial/` и `/architecture/`.
 
 Общие материалы и компоненты находятся в src/main.jsx; оформление — src/style.css.
 Нет сервера, форм и внешних интеграций. Контактные ссылки открывают почту или телефон.
